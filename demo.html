@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="divOne">
+      Div one content goes here
+      <button onclick="myfun('divOne')" name="button">DivOne</button>
+    </div>
+    <div id="divTwo">
+      Div two content goes here
+      <button onclick="myfun('divTwo')" name="button">DivTwo</button>
+    </div>
+    <button type="button" onclick="wholePrint()" name="button">Whole</button>
+  </body>
+  <script type="text/javascript">
+    function wholePrint(){
+      window.print();
+    }
+
+
+    function myfun(paravalue){
+      var backup=document.body.innerHTML;
+      var divContent=document.getElementById(paravalue).innerHTML;
+      document.body.innerHTML=divContent;
+      window.print();
+      document.body.innerHTML=backup;
+    }
+</script>
+
+</html>
